@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directivos - ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+<body>
+  <header class="header-index">
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" alt="Logo Colegio" class="logo-index">
+</header>
+
+    <h1>PANEL DE <br> DIRECTIVOS</h1>
+
+</header>
+
+<nav class="menu-principal">
+    <ul>
+        <li><a href="{{ url_for('directivos') }}">Cerrar sesión</a></li>
+        <li><a href="#"> Docentes</a></li>
+        <li><a href="#">Estudiantes</a></li>
+        <li><a href="#">Asistencia General</a></li>
+        <li><a href="#">Comunicados</a></li>
+        <li><a href="{{ url_for('inicio') }}">Cerrar sesión</a></li>
+    </ul>
+</nav>
+
+<section class="contenido">
+
+    <h2>¡Bienvenido Directivo!</h2>
+
+    <p>
+        Desde este panel podrás supervisar la información académica y administrativa de la institución.
+    </p>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h3>Docentes</h3>
+            <p>Consultar la información de los docentes.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Estudiantes</h3>
+            <p>Consultar la información de los estudiantes.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Asistencia</h3>
+            <p>Revisar la asistencia general de la institución.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Comunicados</h3>
+            <p>Publicar y consultar comunicados institucionales.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>ESTUDIO GBM</p>
+
+    <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+    <p>JHONATAN STIVEN GAUTA ELLES</p>
+    <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+    <p>LIA NAHOMI ORDAZ LEON</p>
+    <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+
+    <p>2026 - CEET GABRIEL BETANCOURT MEJÍA I.E.D.</p>
+
+</footer>
+
+</body>
+
+</html>

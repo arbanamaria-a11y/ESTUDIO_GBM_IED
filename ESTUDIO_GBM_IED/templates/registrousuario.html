@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REGISTRO DE USUARIO - ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+   <header class="header-centro">
+
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+         alt="Logo Colegio"
+         class="logo-centro">
+
+    <h1 class="titulo-centro">REGISTRO DE USUARIO</h1>
+
+</header>
+
+   <nav class="menu-principal">
+    <ul>
+
+        <li><a href="{{ url_for('administrador') }}">Inicio</a></li>
+
+        <li><a href="{{ url_for('registro') }}">Gestionar Usuarios</a></li>
+
+        <li><a href="{{ url_for('cursos') }}">Cursos</a></li>
+
+        <li><a href="#">Notas</a></li>
+
+        <li><a href="#">Asistencia</a></li>
+
+        <li><a href="#">Comunicados</a></li>
+
+        <li><a href="{{ url_for('inicio') }}">Cerrar sesión</a></li>
+
+    </ul>
+</nav>
+
+    <section class="contenido">
+
+        <div class="caja-login">
+
+            <h2>REGISTRO DE USUARIO</h2>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form class="registro-form" method="POST" action="{{ url_for('registro') }}">
+
+                <!-- NOMBRE -->
+                <label for="nombre">Nombre completo</label>
+                <input type="text"
+                       id="nombre"
+                       name="nombre"
+                       placeholder="Ej: Juan Pérez"
+                       required>
+
+                <br><br>
+
+                <!-- CORREO -->
+                <label for="correo">Correo electrónico</label>
+                <input type="email"
+                       id="correo"
+                       name="correo"
+                       placeholder="Ej: correo@gmail.com"
+                       required>
+
+                <br><br>
+
+                <!-- TELÉFONO -->
+                <label for="telefono">Teléfono</label>
+                <input type="tel"
+                       id="telefono"
+                       name="telefono"
+                       placeholder="Ej: 3001234567"
+                       required>
+
+                <br><br>
+
+                <!-- USUARIO -->
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text"
+                       id="usuario"
+                       name="usuario"
+                       placeholder="Ej: juan123"
+                       required>
+
+                <br><br>
+
+                <!-- CONTRASEÑA -->
+                <label for="contrasena">Contraseña</label>
+                <input type="password"
+                       id="contrasena"
+                       name="password"
+                       placeholder="Crea una contraseña"
+                       required>
+
+                <br><br>
+
+                <!-- CONFIRMAR CONTRASEÑA -->
+                <label for="confirmar">Confirmar contraseña</label>
+                <input type="password"
+                       id="confirmar"
+                       name="confirmar_password"
+                       placeholder="Confirme la contraseña"
+                       required>
+
+                <br><br>
+
+                <!-- TÉRMINOS -->
+                <div class="terminos">
+
+                    <input type="checkbox"
+                           id="acepto"
+                           name="acepto"
+                           required>
+
+                    <label for="acepto">
+                        Acepto los
+                        <a href="terminos.html" target="_blank">
+                            términos y condiciones
+                        </a>
+                        del manual de convivencia de la institución.
+                    </label>
+
+                </div>
+
+                <br><br>
+
+                <button type="submit" class="boton">
+                    REGISTRARSE
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>ESTUDIO GBM</p>
+
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <p>JHONATAN STIVEN GAUTA ELLES</p>
+        <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+
+        <p>2026-CEET GABRIEL BETANCOURT MEJIA I.E.D.</p>
+
+    </footer>
+
+</body>
+
+</html>

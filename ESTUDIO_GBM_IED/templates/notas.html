@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestionar Notas</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <header class="header-centro">
+
+        <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+             alt="Logo Colegio"
+             class="logo-centro">
+
+        <h1 class="titulo-centro">GESTIONAR NOTAS</h1>
+
+    </header>
+
+    <nav class="menu-principal">
+    <ul>
+
+        <li><a href="{{ url_for('administrador') }}">Inicio</a></li>
+
+        <li><a href="{{ url_for('registro') }}">Gestionar Usuarios</a></li>
+
+        <li><a href="{{ url_for('cursos') }}">Cursos</a></li>
+
+        <li><a href="{{ url_for('notas') }}">Notas</a></li>
+
+        <li><a href="#">Asistencia</a></li>
+
+        <li><a href="#">Comunicados</a></li>
+
+        <li><a href="{{ url_for('inicio') }}">Cerrar sesión</a></li>
+
+    </ul>
+</nav>
+
+    <main>
+
+        <h2>Registrar Nota</h2>
+
+        <form method="POST">
+
+            <label for="id_usuario">ID del estudiante:</label>
+            <input type="number" id="id_usuario" name="id_usuario" required>
+
+            <label for="asignatura">Asignatura:</label>
+            <input type="text" id="asignatura" name="asignatura" required>
+
+            <label for="nota">Nota:</label>
+<input type="number"
+       id="nota"
+       name="nota"
+       min="0"
+       max="5"
+       step="0.1"
+       required>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <button type="submit">Guardar Nota</button>
+
+        </form>
+        <h2>Notas registradas</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID Nota</th>
+            <th>ID Usuario</th>
+            <th>Asignatura</th>
+            <th>Nota</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for nota in notas %}
+    <tr>
+        <td>{{ nota[0] }}</td>
+        <td>{{ nota[1] }}</td>
+        <td>{{ nota[2] }}</td>
+        <td>{{ nota[3] }}</td>
+        <td>{{ nota[4] }}</td>
+
+        <td>
+            <a href="{{ url_for('editar_nota', id_nota=nota[0]) }}">
+                Editar
+            </a>
+
+            <a href="{{ url_for('eliminar_nota', id_nota=nota[0]) }}"
+               onclick="return confirm('¿Está seguro de eliminar esta nota?');">
+                Eliminar
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+</table>
+
+    </main>
+
+    <br>
+    
+ <footer>
+
+        <p>ESTUDIO GBM</p>
+
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <p>JHONATAN STIVEN GAUTA ELLES</p>
+        <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+
+        <p>2026-CEET GABRIEL BETANCOURT MEJIA I.E.D.</p>
+
+    </footer>
+
+</body>
+</html>

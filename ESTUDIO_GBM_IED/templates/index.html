@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+<body>
+  <header class="header-index">
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" alt="Logo Colegio" class="logo-index">
+</header>
+   <nav class="menu-principal">
+            <ul>
+        
+    <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+    <li><a href="{{ url_for('mision') }}">Misión y Visión</a></li>
+    <li><a href="{{ url_for('quienes_somos') }}">Quiénes Somos</a></li>
+    <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+       <section class="slider">
+    <div class="slides">
+    <img class="escudo" src="{{ url_for('static', filename='IMAGENES/IMAGEN1.png') }}">
+
+        <div class="texto-slider">
+            <h2>Bienvenido al Colegio Gabriel Betancourt Mejía</h2>
+            <p>Formando estudiantes con excelencia y compromiso.</p>
+        </div>
+
+    </div>
+    </section>
+    <hr>
+    
+    <style>
+@font-face {
+src: url(https://dl.dropbox.com/s/kp4x66rhekt1fz5/AdabelleHandwriting-Regular.ttf);
+font-family: adabelle;
+}
+</style>
+    <footer>
+        <p>ESTUDIO GBM</p>
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <P>JHONATAN STIVEN GAUTA ELLES</P>
+        <P>JOSE ALEJANDRO JIMENEZ MURILLO</P>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <P>DANNA SOFIA TAKEMICHE FLOREZ</P>
+        <p>2026-CEET GABRIEL BETANCOURT MEJIA I.E.D.</p>
+    </footer>
+</body>
+</html>

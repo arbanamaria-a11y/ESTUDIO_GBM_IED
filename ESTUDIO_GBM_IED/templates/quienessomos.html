@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REGISTRO DE USUARIO - ESTUDIO GBM</title>
+
+   <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+<header class="header-centro">
+
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+         alt="Logo Colegio"
+         class="logo-centro">
+
+    <h1 class="titulo-centro">¿QUIÉNES SOMOS?</h1>
+
+</header>
+
+    <nav class="menu-principal">
+        <ul>
+            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+    <li><a href="{{ url_for('mision') }}">Misión y Visión</a></li>
+    <li><a href="{{ url_for('quienes_somos') }}">Quiénes Somos</a></li>
+    <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- CONTENIDO -->
+<section class="contenedor">
+
+    <div class="tarjeta">
+
+        <img src="{{ url_for('static', filename='IMAGENES/IMG_6398.JPG.jpeg') }}" alt="Equipo ESTUDIO GBM" class="imagen">
+
+            
+
+            <p>
+                <strong>ESTUDIO GBM</strong> es una plataforma educativa digital
+                creada con el propósito de mejorar la experiencia de aprendizaje
+                de estudiantes y docentes mediante herramientas modernas,
+                dinámicas y fáciles de utilizar.
+            </p>
+
+            <p>
+                Nuestro proyecto nace de la necesidad de integrar la tecnología
+                en el ámbito educativo, ofreciendo un espacio organizado donde
+                los usuarios puedan acceder a clases, tareas, actividades,
+                materiales de apoyo y comunicación académica de manera rápida
+                y eficiente.
+            </p>
+
+            <p>
+                Buscamos transformar la educación tradicional en una experiencia
+                más interactiva, motivadora y accesible para todos, permitiendo
+                que los estudiantes desarrollen sus habilidades académicas y
+                digitales en un entorno moderno.
+            </p>
+
+            <p>
+                En ESTUDIO GBM creemos que la educación es la base del futuro,
+                por eso trabajamos constantemente en mejorar nuestras herramientas,
+                incorporando nuevas funciones y diseños que faciliten el proceso
+                de enseñanza y aprendizaje.
+            </p>
+
+            <p>
+                Nuestra plataforma permite crear clases virtuales, compartir
+                archivos, organizar actividades, enviar tareas y mantener una
+                comunicación constante entre estudiantes y profesores.
+            </p>
+
+            <p>
+                Además, nos enfocamos en brindar una interfaz atractiva,
+                intuitiva y adaptable a diferentes dispositivos como
+                computadores, tablets y teléfonos móviles.
+            </p>
+
+
+        </div>
+
+    </section>
+
+</body>
+
+    <footer>
+        <p>ESTUDIO GBM</p>
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <p>JHONATAN STIVEN GAUTA ELLES</p>
+        <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+        <p>2026-CEET GABRIEL BETANCOURT MEJIA I.E.D.</p>
+    </footer>
+</html>
