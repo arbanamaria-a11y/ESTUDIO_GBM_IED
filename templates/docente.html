@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docente - ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+<body>
+  <header class="header-index">
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" alt="Logo Colegio" class="logo-index">
+</header>
+
+    <h1>PANEL DEL <br> DOCENTE</h1>
+
+
+<nav class="menu-principal">
+    <ul>
+        <li><a href="{{ url_for('administrador') }}">Inicio</a></li>
+        <li><a href="registrarestudiante.html">Registrar estudiantes</a></li>
+        <li><a href="registronotas.html">Registrar notas</a></li>
+        <li><a href="registroasistencia.html">Registrar asistencia</a></li>
+        <li><a href="publicartareas.html">Publicar tareas</a></li>
+        <li><a href="comunicados.html">Comunicados</a></li>
+        <li><a href="{{ url_for('inicio') }}">Cerrar sesión</a></li>
+    </ul>
+</nav>
+
+<section class="contenido">
+
+    <h2>¡Bienvenido Docente!</h2>
+
+    <p>
+        Desde este panel podrás administrar la información académica de tus estudiantes.
+    </p>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h3>Estudiantes</h3>
+            <p>Consultar la lista de estudiantes asignados.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Notas</h3>
+            <p>Registrar y actualizar las calificaciones.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Asistencia</h3>
+            <p>Registrar la asistencia diaria de los estudiantes.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Tareas</h3>
+            <p>Publicar actividades y trabajos para los estudiantes.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Comunicados</h3>
+            <p>Enviar información importante a estudiantes y padres.</p>
+        </div> 
+    </div>
+
+</section>
+
+<footer>
+
+    <p>ESTUDIO GBM</p>
+
+    <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+    <p>JHONATAN STIVEN GAUTA ELLES</p>
+    <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+    <p>LIA NAHOMI ORDAZ LEON</p>
+    <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+
+    <p>2026 - CEET GABRIEL BETANCOURT MEJÍA I.E.D.</p>
+
+</footer>
+
+</body>
+
+</html>

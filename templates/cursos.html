@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos - ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+<header class="header-centro">
+
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+         alt="Logo Colegio"
+         class="logo-centro">
+
+    <h1 class="titulo-centro">CURSOS</h1>
+
+</header>
+
+
+<nav class="menu-principal">
+
+    <ul>
+
+        <li><a href="{{ url_for('administrador') }}">Inicio</a></li>
+
+        <li><a href="{{ url_for('registro') }}">Gestionar Usuarios</a></li>
+
+        <li><a href="{{ url_for('cursos') }}">Cursos</a></li>
+
+        <li><a href="#">Notas</a></li>
+
+        <li><a href="#">Asistencia</a></li>
+
+        <li><a href="#">Comunicados</a></li>
+
+        <li><a href="{{ url_for('inicio') }}">Cerrar sesión</a></li>
+
+    </ul>
+
+</nav>
+
+
+<section class="contenido">
+
+    <h2>Lista de cursos</h2>
+
+    <p>Estos son los cursos registrados actualmente en la institución:</p>
+
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+
+            <h3>Grado 10°</h3>
+
+            <p>Curso 1001</p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <h3>Grado 11°</h3>
+
+            <p>Curso 1101</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>ESTUDIO GBM</p>
+
+    <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+    <p>JHONATAN STIVEN GAUTA ELLES</p>
+    <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+    <p>LIA NAHOMI ORDAZ LEON</p>
+    <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+
+    <p>2026 - CEET GABRIEL BETANCOURT MEJÍA I.E.D.</p>
+
+</footer>
+
+</body>
+
+</html>

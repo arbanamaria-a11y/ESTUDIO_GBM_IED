@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - ESTUDIO GBM</title>
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <header class="header-centro">
+        <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+             alt="Logo Colegio"
+             class="logo-centro">
+        <h1 class="titulo-centro">PANEL DEL <br> ADMINISTRADOR</h1>
+    </header>
+
+    <nav class="menu-principal">
+        <ul>
+            <li><a href="{{ url_for('administrador') }}">Inicio</a></li>
+            <li><a href="{{ url_for('registro') }}">Gestionar Usuarios</a></li>
+            <li><a href="{{ url_for('cursos') }}">Cursos</a></li>
+            <li><a href="{{ url_for('notas') }}">Notas</a></li>
+            <li><a href="#">Asistencia</a></li>
+            <li><a href="#">Comunicados</a></li>
+            <li><a href="{{ url_for('reporte') }}">Reporte de Reservas</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <section class="contenido">
+        <h2>¡Bienvenido Administrador!</h2>
+        <p>
+            Desde este panel podrás administrar toda la plataforma
+            <strong>ESTUDIO GBM</strong>.
+        </p>
+
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <h3>Usuarios</h3>
+                <p>Registrar, editar y eliminar usuarios.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Cursos</h3>
+                <p>Administrar cursos y asignaturas.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Notas</h3>
+                <p>Consultar y gestionar calificaciones.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Asistencia</h3>
+                <p>Controlar la asistencia de los estudiantes.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Comunicados</h3>
+                <p>Publicar información para toda la institución.</p>
+            </div>
+
+            <!-- NUEVA TARJETA DE REPORTE DE RESERVAS CON BOTÓN -->
+            <div class="tarjeta">
+                <h3>Reporte de Reservas</h3>
+                <p>Consultar reservas y exportar reportes a Excel.</p>
+                <br>
+                <a href="{{ url_for('reporte') }}" style="display: inline-block; background: #8b0000; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                    Ver Reportes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>ESTUDIO GBM</p>
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <p>JHONATAN STIVEN GAUTA ELLES</p>
+        <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+        <p>2026 - CEET GABRIEL BETANCOURT MEJÍA I.E.D.</p>
+    </footer>
+
+</body>
+
+</html>

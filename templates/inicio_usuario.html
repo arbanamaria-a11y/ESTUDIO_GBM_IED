@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo-titulo">
+            <img src="{{ url_for('static', filename='IMAGENES/LOGOTIPO.png') }}" class="logo" alt="Logo">
+            <h1>RESTAURANTE GUSTOS & SABOR</h1>
+        </div>
+        <div class="usuario">
+            <span>👤 Bienvenid@</span>
+            <strong>{{ nombre }}</strong>
+        </div>
+    </header>
+
+    <nav class="menu-principal">
+        <ul>
+            <li><a href="{{ url_for('inicio_usuario') }}">Inicio</a></li>
+            <li><a href="{{ url_for('consultar_usuarios') }}">Consultar usuarios</a></li>
+            <li><a href="{{ url_for('editar_usuario', id=id_usuario) }}">Editar mis datos</a></li>
+            <li><a href="{{ url_for('eliminar_usuarios') }}">Eliminar usuarios</a></li>
+            <li><a href="{{ url_for('reporte') }}">Reporte de Reservas</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <section class="login-container">
+        <div class="login-form">
+            <h2>Bienvenido {{ nombre }}</h2>
+            <p>Has iniciado sesión correctamente.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>RESTAURANTE GUSTOS & SABOR</p>
+        <p>LEIDY MARCELA MANRIQUE OBREGÓN</p>
+        <p>2026 - CEET - COLEGIO GABRIEL BETANCOURT MEJÍA</p>
+    </footer>
+
+</body>
+
+</html>

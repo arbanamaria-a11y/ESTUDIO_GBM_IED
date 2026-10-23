@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Reservas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .contenedor {
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px auto;
+        }
+
+        .encabezado {
+            background:  #1884F2;
+            color: white;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .encabezado h1 {
+            margin-bottom: 8px;
+        }
+
+        .encabezado p {
+            opacity: 0.9;
+        }
+
+        .filtros {
+            background: white;
+            padding: 25px;
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .campo label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .campo input {
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button,
+        .boton {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 15px;
+            color: white;
+            display: inline-block;
+        }
+
+        .buscar {
+            background: #6890ff;
+        }
+
+        .buscar:hover {
+            background: #7293f0;
+        }
+
+        .limpiar {
+            background: #777;
+        }
+
+        .excel {
+            background: #16833b;
+            margin-left: auto;
+        }
+
+        .excel:hover {
+            background: #10632d;
+        }
+
+        .tabla-contenedor {
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow-x: auto;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1100px;
+        }
+
+        th {
+            background:  #1884F2;
+            color: white;
+            padding: 14px 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        .estado {
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .pendiente {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .confirmada {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .cancelada {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .sin-datos {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        .cantidad {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="encabezado">
+        <h1>Reporte</h1>
+        <p>Consulta y exportacióne</p>
+    </div>
+
+    <!-- FILTROS -->
+    <form method="GET" action="{{ url_for('reporte') }}" class="filtros">
+        <div class="campo">
+            <label for="fecha">Filtrar por fecha</label>
+            <input type="date" id="fecha" name="fecha" value="{{ fecha or '' }}">
+        </div>
+
+        <button type="submit" class="buscar">🔎 Buscar</button>
+
+        <a href="{{ url_for('reporte') }}" class="boton limpiar">Limpiar</a>
+
+        <a href="{{ url_for('reporte_excel', fecha=fecha) if fecha else url_for('reporte_excel') }}" class="boton excel">
+            📊 Exportar a Excel
+        </a>
+    </form>
+
+    <!-- TABLA -->
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Reserva</th>
+                    <th>ID Usuario</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Personas</th>
+                    <th>Estado</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if reservas %}
+                    {% for reserva in reservas %}
+                    <tr>
+                        <td>{{ reserva.id_reserva }}</td>
+                        <td>{{ reserva.id_usuario }}</td>
+                        <td>{{ reserva.nombre }}</td>
+                        <td>{{ reserva.correo }}</td>
+                        <td>{{ reserva.fecha_reserva }}</td>
+                        <td>{{ reserva.hora_reserva }}</td>
+                        <td class="cantidad">{{ reserva.cantidad_personas }}</td>
+                        <td>
+                            {% if reserva.estado == 'Pendiente' %}
+                                <span class="estado pendiente">{{ reserva.estado }}</span>
+                            {% elif reserva.estado == 'Confirmada' %}
+                                <span class="estado confirmada">{{ reserva.estado }}</span>
+                            {% elif reserva.estado == 'Cancelada' %}
+                                <span class="estado cancelada">{{ reserva.estado }}</span>
+                            {% else %}
+                                <span class="estado">{{ reserva.estado }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ reserva.observaciones or 'Sin observaciones' }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="9" class="sin-datos">No se encontraron reservas.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+
+</html>

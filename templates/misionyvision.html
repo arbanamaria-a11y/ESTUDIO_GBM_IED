@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REGISTRO DE USUARIO - ESTUDIO GBM</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='IMAGENES/escudooo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+<header class="header-centro">
+
+    <img src="{{ url_for('static', filename='IMAGENES/escudooo.png') }}"
+         alt="Logo Colegio"
+         class="logo-centro">
+
+    <h1 class="titulo-centro">MISIÓN Y VISIÓN</h1>
+
+</header>
+
+    <nav class="menu-principal">
+        <ul>
+           <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+    <li><a href="{{ url_for('mision') }}">Misión y Visión</a></li>
+    <li><a href="{{ url_for('quienes_somos') }}">Quiénes Somos</a></li>
+    <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="contenedor-bloques">
+        <div class="box">
+            <h2 class="titulo-mision">Mision</h2>
+            <p class="texto-mision">
+                Crear un espacio digital donde estudiantes y docentes puedan organizar 
+                fácilmente sus actividades académicas, subir tareas, revisar notas, 
+                consultar circulares y mantenerse al día con el calendario escolar. 
+                Buscamos hacer que el proceso educativo sea más práctico, ordenado y 
+                accesible para todos.
+            </p>
+        </div>
+        <div class="contenedor-img">
+            <img src="{{ url_for('static', filename='IMAGENES/ninoestudioso0.png') }}" alt="Niño Estudioso">
+        </div>
+    </div> 
+
+    <div class="contenedor-bloques">
+        <div class="contenedor-img">
+            <img src="{{ url_for('static', filename='IMAGENES/ninoestudioso1.png') }}" alt="Niño Estudioso Misión">
+        </div>
+        <div class="box">
+            <h2 class="titulo-mision">Vision</h2>
+            <p class="texto-mision">
+                Convertirnos en una plataforma educativa confiable y útil para la 
+                comunidad estudiantil, ayudando a mejorar la organización, la comunicación 
+                y el seguimiento académico mediante herramientas digitales simples, 
+                modernas y fáciles de usar.
+            </p>
+        </div>
+    </div> 
+
+    <hr>
+
+    <footer>
+        <p>ESTUDIO GBM</p>
+        <p>ANAMARIA VICTORIA ARBOLEDA GALLEGO</p>
+        <p>JHONATAN STIVEN GAUTA ELLES</p>
+        <p>JOSE ALEJANDRO JIMENEZ MURILLO</p>
+        <p>LIA NAHOMI ORDAZ LEON</p>
+        <p>DANNA SOFIA TAKEMICHE FLOREZ</p>
+        <p>2026-CEET GABRIEL BETANCOURT MEJIA I.E.D.</p>
+    </footer>
+
+</body>
+</html>
