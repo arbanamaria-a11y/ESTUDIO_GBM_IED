@@ -17,8 +17,10 @@ app.config['MYSQL_HOST'] = Config.MYSQL_HOST
 app.config['MYSQL_USER'] = Config.MYSQL_USER
 app.config['MYSQL_PASSWORD'] = Config.MYSQL_PASSWORD
 app.config['MYSQL_DB'] = Config.MYSQL_DB
+app.config['MYSQL_PORT'] = Config.PORT if hasattr(Config, 'PORT') else 24725
 
-mysql = MySQL(app)
+# Configuración SSL obligatoria para Aiven
+app.config['MYSQL_SSL'] = {'ssl_mode': 'REQUIRED'}
 
 
 # ==========================
