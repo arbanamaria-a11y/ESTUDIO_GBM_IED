@@ -49,19 +49,19 @@ def login():
         usuario_ingresado = request.form.get("usuario")
         contrasena_ingresada = request.form.get("contrasena")
 
+       
         cursor = mysql.connection.cursor()
         
-        
-     cursor.execute("""
-    SELECT * FROM usuario
-    WHERE nombre_usuario = %s
-    AND contrasena = %s
-    AND roles = %s
-""", (usuario_ingresado, contrasena_ingresada, tipo_usuario))
-
+        cursor.execute("""
+            SELECT * FROM usuario
+            WHERE nombre_usuario = %s
+            AND contrasena = %s
+            AND roles = %s
+        """, (usuario_ingresado, contrasena_ingresada, tipo_usuario))
 
         cuenta = cursor.fetchone()
         cursor.close()
+
 
         if cuenta:
             # Guardamos los datos principales en la sesión del usuario
