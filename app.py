@@ -51,10 +51,14 @@ def login():
 
         cursor = mysql.connection.cursor()
         
-        cursor.execute("""
-            SELECT * FROM usuario 
-            WHERE nombre_usuario = %s AND contraseña = %s AND roles = %s
-        """, (usuario_ingresado, contrasena_ingresada, tipo_usuario))
+        
+     cursor.execute("""
+    SELECT * FROM usuario
+    WHERE nombre_usuario = %s
+    AND contrasena = %s
+    AND roles = %s
+""", (usuario_ingresado, contrasena_ingresada, tipo_usuario))
+
 
         cuenta = cursor.fetchone()
         cursor.close()
